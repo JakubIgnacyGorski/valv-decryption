@@ -29,7 +29,7 @@ def decrypt_file(filename, password, base_path, output_dir, ignore_existing=Fals
         check = file.read(12)
         decrypted_check = cipher.decrypt(file.read(12))
         if (check != decrypted_check):
-            print_animation("Invalid password for file", filename)
+            print_animation(f"Invalid password for file: {filename}")
             return 1
 
         cipher.decrypt(file.read(1)) # skip newline character
